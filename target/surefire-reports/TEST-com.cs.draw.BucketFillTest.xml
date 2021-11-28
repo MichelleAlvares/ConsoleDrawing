@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.cs.draw.BucketFillTest" time="0.032" tests="9" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.cs.draw.BucketFillTest" time="0.04" tests="9" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="11.0.4+10-LTS"/>
@@ -65,12 +65,12 @@
     <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase name="yOutsideBorder" classname="com.cs.draw.BucketFillTest" time="0.002"/>
-  <testcase name="yIsZeroBorder" classname="com.cs.draw.BucketFillTest" time="0.001"/>
+  <testcase name="yIsZeroBorder" classname="com.cs.draw.BucketFillTest" time="0.002"/>
   <testcase name="xIsZeroBorder" classname="com.cs.draw.BucketFillTest" time="0.002"/>
   <testcase name="xOutsideBorder" classname="com.cs.draw.BucketFillTest" time="0.002"/>
-  <testcase name="testBucketFill" classname="com.cs.draw.BucketFillTest" time="0.014"/>
-  <testcase name="testMoveDown" classname="com.cs.draw.BucketFillTest" time="0.003"/>
+  <testcase name="testBucketFill" classname="com.cs.draw.BucketFillTest" time="0.017"/>
+  <testcase name="testMoveDown" classname="com.cs.draw.BucketFillTest" time="0.002"/>
   <testcase name="testMoveLeft" classname="com.cs.draw.BucketFillTest" time="0.001"/>
-  <testcase name="testMoveUp" classname="com.cs.draw.BucketFillTest" time="0.001"/>
-  <testcase name="testMoveRight" classname="com.cs.draw.BucketFillTest" time="0.001"/>
+  <testcase name="testMoveUp" classname="com.cs.draw.BucketFillTest" time="0.002"/>
+  <testcase name="testMoveRight" classname="com.cs.draw.BucketFillTest" time="0.002"/>
 </testsuite>

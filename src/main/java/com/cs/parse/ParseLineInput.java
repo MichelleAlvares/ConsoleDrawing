@@ -8,7 +8,7 @@ import com.cs.validation.InputParameterValidation;
 
 import static com.cs.constants.AppConstants.LINE;
 
-public class ParseLineInput {
+class ParseLineInput {
 
     private InputParameterValidation inputParameterValidation;
     private LineUtil lineUtil;
@@ -20,7 +20,7 @@ public class ParseLineInput {
         this.drawLine = new DrawLine();
     }
 
-    public void parseLineInput(String[] userInputArray, char[][] drawing, Shape2D shape2D) {
+    void parseLineInput(String[] userInputArray, char[][] drawing, Shape2D shape2D) {
         if (inputParameterValidation.valid(LINE, drawing, userInputArray)) {
             Line l = (Line) lineUtil.getShape(userInputArray, shape2D);
             drawLine.draw(l, drawing);

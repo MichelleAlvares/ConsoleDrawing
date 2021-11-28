@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 import static com.cs.constants.AppConstants.*;
 import static com.cs.constants.AppConstants.ErrorMessage.ERROR_MESSAGE;
-import static com.cs.constants.AppConstants.NOT_VALID_COMMAND;
 
 public class DrawingCommandParser {
 

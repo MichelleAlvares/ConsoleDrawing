@@ -8,7 +8,7 @@ import com.cs.validation.InputParameterValidation;
 
 import static com.cs.constants.AppConstants.BUCKET_FILL;
 
-public class ParseBucketFillInput {
+class ParseBucketFillInput {
 
     private InputParameterValidation inputParameterValidation;
     private BucketFillUtil bucketFillUtil;
@@ -20,7 +20,7 @@ public class ParseBucketFillInput {
         this.bucketFill = new BucketFill();
     }
 
-    public void parseBucketFillInput(String[] userInputArray, char[][] drawing, Shape2D shape2D) {
+    void parseBucketFillInput(String[] userInputArray, char[][] drawing, Shape2D shape2D) {
         if (inputParameterValidation.valid(BUCKET_FILL, drawing, userInputArray)) {
             Fill b = (Fill) bucketFillUtil.getShape(userInputArray, shape2D);
             bucketFill.draw(b, drawing);

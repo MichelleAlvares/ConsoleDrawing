@@ -19,16 +19,8 @@ public class Rectangle extends Shape2D {
         return topLeft;
     }
 
-    public void setTopLeft(Point topLeft) {
-        this.topLeft = topLeft;
-    }
-
     public Point getBottomRight() {
         return bottomRight;
-    }
-
-    public void setBottomRight(Point bottomRight) {
-        this.bottomRight = bottomRight;
     }
 
     @Override

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.cs.service.CommandConsoleTest" time="0.015" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.cs.service.CommandConsoleTest" time="0.014" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="11.0.4+10-LTS"/>
@@ -64,6 +64,6 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="isConsoleCommandInputPresentTest" classname="com.cs.service.CommandConsoleTest" time="0.011"/>
+  <testcase name="isConsoleCommandInputPresentTest" classname="com.cs.service.CommandConsoleTest" time="0.01"/>
   <testcase name="processScannerInputCanvasTest" classname="com.cs.service.CommandConsoleTest" time="0.001"/>
 </testsuite>

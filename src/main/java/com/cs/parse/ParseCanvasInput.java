@@ -8,7 +8,7 @@ import com.cs.validation.InputParameterValidation;
 
 import static com.cs.constants.AppConstants.CANVAS;
 
-public class ParseCanvasInput {
+class ParseCanvasInput {
 
     private InputParameterValidation inputParameterValidation;
     private CanvasUtil canvasUtil;
@@ -20,7 +20,7 @@ public class ParseCanvasInput {
         this.drawCanvas = new DrawCanvas();
     }
 
-    public char[][] parseCanvas(String[] userInputArray, char[][] drawing, Shape2D shape2D) {
+    char[][] parseCanvas(String[] userInputArray, char[][] drawing, Shape2D shape2D) {
         if (inputParameterValidation.valid(CANVAS, drawing, userInputArray)) {
             Canvas c = (Canvas) canvasUtil.getShape(userInputArray, shape2D);
             drawing = new char[c.getHeight() + 2][c.getWidth() + 2];

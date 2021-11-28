@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.cs.parse.ParseCanvasInputTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.478 sec - in com.cs.parse.ParseCanvasInputTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.469 sec - in com.cs.parse.ParseCanvasInputTest

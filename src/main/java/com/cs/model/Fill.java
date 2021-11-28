@@ -20,16 +20,8 @@ public class Fill extends Shape2D {
         return fillStartPoint;
     }
 
-    public void setFillStartPoint(Point fillStartPoint) {
-        this.fillStartPoint = fillStartPoint;
-    }
-
     public char getNewColour() {
         return newColour;
-    }
-
-    public void setNewColour(char newColour) {
-        this.newColour = newColour;
     }
 
     public char getOldColour() {

@@ -8,7 +8,7 @@ import com.cs.validation.InputParameterValidation;
 
 import static com.cs.constants.AppConstants.RECTANGLE;
 
-public class ParseRectangleInput {
+class ParseRectangleInput {
 
     private InputParameterValidation inputParameterValidation;
     private RectangleUtil rectangleUtil;
@@ -20,7 +20,7 @@ public class ParseRectangleInput {
         this.drawRectangle = new DrawRectangle();
     }
 
-    public void parseRectangleInput(String[] userInputArray, char[][] drawing, Shape2D shape2D) {
+    void parseRectangleInput(String[] userInputArray, char[][] drawing, Shape2D shape2D) {
         if (inputParameterValidation.valid(RECTANGLE, drawing, userInputArray)) {
             Rectangle r = (Rectangle) rectangleUtil.getShape(userInputArray, shape2D);
             drawRectangle.draw(r, drawing);

@@ -64,8 +64,8 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="testDrawRectangle" classname="com.cs.draw.DrawRectangleTest" time="0.026"/>
-  <testcase name="pointsNotInOrder" classname="com.cs.draw.DrawRectangleTest" time="0.002"/>
-  <testcase name="outsideBorder" classname="com.cs.draw.DrawRectangleTest" time="0.002"/>
+  <testcase name="testDrawRectangle" classname="com.cs.draw.DrawRectangleTest" time="0.025"/>
+  <testcase name="pointsNotInOrder" classname="com.cs.draw.DrawRectangleTest" time="0.001"/>
+  <testcase name="outsideBorder" classname="com.cs.draw.DrawRectangleTest" time="0.003"/>
   <testcase name="inputPointsLieOnTheSameLine" classname="com.cs.draw.DrawRectangleTest" time="0.001"/>
 </testsuite>

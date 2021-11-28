@@ -13,15 +13,15 @@ class Driver {
         Scanner scanner = new Scanner(System.in).useDelimiter(EMPTY_STRING);
         consoleService.displayWelcomeMessage();
 
-        char[][] consoleDrawing;
+        char[][] drawing;
         String command;
         boolean consoleInput = consoleService.isConsoleCommandInputPresent(scanner);
 
         while (consoleInput) {
             command = scanner.nextLine();
-            consoleDrawing = consoleService.processCommand(command, scanner);
+            drawing = consoleService.processCommand(command, scanner);
 
-            consoleService.displayConsoleDrawing(consoleDrawing);
+            consoleService.displayConsoleDrawing(drawing);
 
             consoleService.askUserToEnterNextCommand(command);
 

@@ -32,6 +32,7 @@ java -jar drawing-console-program.jar
  3. Only positive numbers will be accepted.
  4. All points will start from left to right eg line first point x1 y1 is the left most one or in case of a rectangle it is the top left one.
  5. Only horizontal or vertical line can be drawn.
+ 6. Command Identifies are case insensitive. eg c 10 10 will be accepted.
 
 
 **Improvements to the application:**

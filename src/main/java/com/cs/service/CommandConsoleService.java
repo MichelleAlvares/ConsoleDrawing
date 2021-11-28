@@ -46,7 +46,7 @@ public class CommandConsoleService {
     }
 
     public void askUserToEnterNextCommand(String command) {
-        if (!QUIT.equals(command))
+        if (!QUIT.equalsIgnoreCase(command))
             System.out.print(ENTER_COMMAND);
     }
 }

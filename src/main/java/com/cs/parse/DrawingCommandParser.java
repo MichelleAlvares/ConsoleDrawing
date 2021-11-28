@@ -27,7 +27,7 @@ public class DrawingCommandParser {
     public char[][] parseCommand(String command, char[][] drawing, Scanner scanner) {
         String[] userInputArray = command.split(String.valueOf(SPACE));
 
-        switch (userInputArray[0]) {
+        switch (userInputArray[0].toUpperCase()) {
             case CANVAS:
                 drawing = parseCanvasInput.parseCanvas(userInputArray, drawing, shape2D);
                 break;

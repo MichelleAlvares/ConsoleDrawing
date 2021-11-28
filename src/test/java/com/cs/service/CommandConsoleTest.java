@@ -1,4 +1,3 @@
-/*
 package com.cs.service;
 
 import com.cs.parse.ParseBucketFillInput;
@@ -16,7 +15,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.Scanner;
 
 @ExtendWith(MockitoExtension.class)
-class CommandConsoleServiceTest {
+class CommandConsoleTest {
 
     private Scanner scanner;
     @Mock
@@ -32,10 +31,10 @@ class CommandConsoleServiceTest {
 
     @Test
     void processScannerInputCanvasTest() {
-        Mockito.when(parseCanvasInput.parseCanvas(Mockito.any(), Mockito.any())).thenReturn(new char[][]{{'-', '-', '-'}, {'|', ' ', '|'}, {'-', '-', '-'}});
+        Mockito.when(parseCanvasInput.parseCanvas(Mockito.any(), Mockito.any(), Mockito.any())).thenReturn(new char[][]{{'-', '-', '-'}, {'|', ' ', '|'}, {'-', '-', '-'}});
         scanner = new Scanner("C 5 3");
         consoleService.processCommand("C 5 3", scanner);
-        Mockito.verify(parseCanvasInput, Mockito.times(1)).parseCanvas(Mockito.any(), Mockito.any());
+        Mockito.verify(parseCanvasInput, Mockito.times(1)).parseCanvas(Mockito.any(), Mockito.any(), Mockito.any());
     }
 
     @Test
@@ -66,7 +65,7 @@ class CommandConsoleServiceTest {
     void processScannerQuitTest() {
         scanner = new Scanner("Q");
         consoleService.processCommand("Q", scanner);
-        Mockito.verify(parseCanvasInput, Mockito.never()).parseCanvas(Mockito.any(), Mockito.any());
+        Mockito.verify(parseCanvasInput, Mockito.never()).parseCanvas(Mockito.any(), Mockito.any(), Mockito.any());
         Mockito.verify(parseLineInput, Mockito.never()).parseLineInput(Mockito.any(), Mockito.any(), Mockito.any());
         Mockito.verify(parseRectangleInput, Mockito.never()).parseRectangleInput(Mockito.any(), Mockito.any(), Mockito.any());
         Mockito.verify(parseBucketFillInput, Mockito.never()).parseBucketFillInput(Mockito.any(), Mockito.any(), Mockito.any());
@@ -76,7 +75,7 @@ class CommandConsoleServiceTest {
     void processScannerInvalidCommandTest() {
         scanner = new Scanner("7 5 3 o");
         consoleService.processCommand("7 5 3 o", scanner);
-        Mockito.verify(parseCanvasInput, Mockito.never()).parseCanvas(Mockito.any(), Mockito.any());
+        Mockito.verify(parseCanvasInput, Mockito.never()).parseCanvas(Mockito.any(), Mockito.any(), Mockito.any());
         Mockito.verify(parseLineInput, Mockito.never()).parseLineInput(Mockito.any(), Mockito.any(), Mockito.any());
         Mockito.verify(parseRectangleInput, Mockito.never()).parseRectangleInput(Mockito.any(), Mockito.any(), Mockito.any());
         Mockito.verify(parseBucketFillInput, Mockito.never()).parseBucketFillInput(Mockito.any(), Mockito.any(), Mockito.any());
@@ -86,7 +85,7 @@ class CommandConsoleServiceTest {
     void processScannerEmptyInputTest() {
         scanner = new Scanner("");
         consoleService.processCommand("", scanner);
-        Mockito.verify(parseCanvasInput, Mockito.never()).parseCanvas(Mockito.any(), Mockito.any());
+        Mockito.verify(parseCanvasInput, Mockito.never()).parseCanvas(Mockito.any(), Mockito.any(), Mockito.any());
         Mockito.verify(parseLineInput, Mockito.never()).parseLineInput(Mockito.any(), Mockito.any(), Mockito.any());
         Mockito.verify(parseRectangleInput, Mockito.never()).parseRectangleInput(Mockito.any(), Mockito.any(), Mockito.any());
         Mockito.verify(parseBucketFillInput, Mockito.never()).parseBucketFillInput(Mockito.any(), Mockito.any(), Mockito.any());
@@ -100,4 +99,3 @@ class CommandConsoleServiceTest {
         Assertions.assertFalse(consoleService.isConsoleCommandInputPresent(scanner));
     }
 }
-*/

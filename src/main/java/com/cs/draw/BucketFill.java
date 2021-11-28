@@ -42,24 +42,24 @@ public class BucketFill implements Draw {
                 }
                 addAdjacent(bucketFill, x, y, adjacentPoints, drawing);
             }
-        } else borderValidation.printInvalidInputMessage();
+        } else borderValidation.displayInvalidInputMessage();
     }
 
-    private void addAdjacent(Fill bucketFill, int x, int y, Queue<List<Integer>> q, char[][] list) {
-        addToQueue(bucketFill, x, moveUp(y), q, list);
-        addToQueue(bucketFill, x, moveDown(y), q, list);
-        addToQueue(bucketFill, moveRight(x), y, q, list);
-        addToQueue(bucketFill, moveLeft(x), y, q, list);
+    private void addAdjacent(Fill bucketFill, int x, int y, Queue<List<Integer>> q, char[][] drawing) {
+        addToQueue(bucketFill, x, moveUp(y), q, drawing);
+        addToQueue(bucketFill, x, moveDown(y), q, drawing);
+        addToQueue(bucketFill, moveRight(x), y, q, drawing);
+        addToQueue(bucketFill, moveLeft(x), y, q, drawing);
     }
 
-    private void addToQueue(Fill bucketFill, int x, int y, Queue<List<Integer>> q, char[][] currentState) {
+    private void addToQueue(Fill bucketFill, int x, int y, Queue<List<Integer>> q, char[][] drawing) {
         if (borderValidation.withinBorder(x, y, bucketFill.getWidth(), bucketFill.getHeight())) {
-            char currentChar = currentState[y][x];
+            char currentChar = drawing[y][x];
 
             if (!(currentChar == (PIPE) || currentChar == (DASH) || currentChar == (bucketFill.getNewColour())) && currentChar == bucketFill.getOldColour()) {
 
                 q.add(List.of(x, y));
-                currentState[y][x] = bucketFill.getNewColour();
+                drawing[y][x] = bucketFill.getNewColour();
             }
         }
     }

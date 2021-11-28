@@ -18,7 +18,7 @@ public class DrawLine implements Draw {
     }
 
     @Override
-    public void draw(Shape2D line, char[][] currentState) {
+    public void draw(Shape2D line, char[][] drawing) {
         Line l = (Line) line;
         int x1 = l.getLeftPoint().getX();
         int y1 = l.getLeftPoint().getY();
@@ -33,14 +33,14 @@ public class DrawLine implements Draw {
 
                 if (x1 != x2) {
                     for (int i = x1; i <= x2; i++) {
-                        currentState[y1][i] = X;
+                        drawing[y1][i] = X;
                     }
                 } else {
                     for (int i = y1; i <= y2; i++) {
-                        currentState[i][x1] = X;
+                        drawing[i][x1] = X;
                     }
                 }
-            } else borderValidation.printInvalidInputMessage();
-        }else lineValidation.printInvalidInputMessage();
+            } else borderValidation.displayInvalidInputMessage();
+        }else lineValidation.displayInvalidInputMessage();
     }
 }

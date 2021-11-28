@@ -15,7 +15,7 @@ public class ParseCanvasInput {
     private CanvasUtil canvasUtil;
     private DrawCanvas drawCanvas;
 
-    public ParseCanvasInput() {
+    ParseCanvasInput() {
         this.inputParameterValidation = new InputParameterValidation();
         this.canvasUtil = new CanvasUtil();
         this.drawCanvas = new DrawCanvas();

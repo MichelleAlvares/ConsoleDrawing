@@ -25,8 +25,8 @@ class InputParameterValidationTest {
 
     @Test
     void isCanvasDrawnTest() {
-        Assertions.assertTrue(inputValidation.isCanvasDrawn(new char[][]{{'-','-'},{'|',' ',}}));
-        Assertions.assertFalse(inputValidation.isCanvasDrawn(new char[][]{}));
-        Assertions.assertFalse(inputValidation.isCanvasDrawn(null));
+        Assertions.assertTrue(inputValidation.isCanvasDrawn.test(new char[][]{{'-', '-'}, {'|', ' ',}}));
+        Assertions.assertFalse(inputValidation.isCanvasDrawn.test(new char[][]{}));
+        Assertions.assertFalse(inputValidation.isCanvasDrawn.test(null));
     }
 }

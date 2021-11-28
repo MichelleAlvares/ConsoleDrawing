@@ -1,6 +1,6 @@
 package com.cs.print;
 
-public class PrintArray {
+public class DisplayDrawing {
 
     public void printDrawing(char[][] chars) {
         if (chars != null && chars.length > 0) {

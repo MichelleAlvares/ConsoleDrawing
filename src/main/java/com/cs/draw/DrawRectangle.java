@@ -22,7 +22,7 @@ public class DrawRectangle implements Draw {
     }
 
     @Override
-    public void draw(Shape2D rectangle, char[][] currentState) {
+    public void draw(Shape2D rectangle, char[][] drawing) {
         Rectangle r = (Rectangle) rectangle;
         int x1 = r.getTopLeft().getX();
         int y1 = r.getTopLeft().getY();
@@ -35,11 +35,11 @@ public class DrawRectangle implements Draw {
             if (borderValidation.withinBorder(x1, y1, w, h)
                     && borderValidation.withinBorder(x2, y2, w, h)) {
 
-                drawLine.draw(new Line(w, h, LINE, new Point(x1, y1), new Point(x2, y1)), currentState);
-                drawLine.draw(new Line(w, h, LINE, new Point(x1, y1), new Point(x1, y2)), currentState);
-                drawLine.draw(new Line(w, h, LINE, new Point(x1, y2), new Point(x2, y2)), currentState);
-                drawLine.draw(new Line(w, h, LINE, new Point(x2, y1), new Point(x2, y2)), currentState);
-            } else borderValidation.printInvalidInputMessage();
-        } else rectangleValidation.printInvalidInputMessage();
+                drawLine.draw(new Line(w, h, LINE, new Point(x1, y1), new Point(x2, y1)), drawing);
+                drawLine.draw(new Line(w, h, LINE, new Point(x1, y1), new Point(x1, y2)), drawing);
+                drawLine.draw(new Line(w, h, LINE, new Point(x1, y2), new Point(x2, y2)), drawing);
+                drawLine.draw(new Line(w, h, LINE, new Point(x2, y1), new Point(x2, y2)), drawing);
+            } else borderValidation.displayInvalidInputMessage();
+        } else rectangleValidation.displayInvalidInputMessage();
     }
 }

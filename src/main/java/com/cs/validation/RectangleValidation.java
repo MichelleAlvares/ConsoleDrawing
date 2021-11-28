@@ -2,12 +2,12 @@ package com.cs.validation;
 
 import com.cs.model.Rectangle;
 import com.cs.model.Shape2D;
-import com.cs.print.PrintMessage;
+import com.cs.print.DisplayMessage;
 
 import static com.cs.constants.AppConstants.*;
 import static com.cs.constants.AppConstants.ErrorMessage.*;
 
-public class RectangleValidation implements Validation, PrintMessage {
+public class RectangleValidation implements Validation, DisplayMessage {
 
     @Override
     public boolean valid(Shape2D shape2D) {
@@ -17,7 +17,7 @@ public class RectangleValidation implements Validation, PrintMessage {
     }
 
     @Override
-    public void printInvalidInputMessage() {
+    public void displayInvalidInputMessage() {
         System.out.println(ERROR_MESSAGE + RECTANGLE_VALIDATION_FAILED_MESSAGE);
         System.out.println(USER_INSTRUCTIONS);
     }

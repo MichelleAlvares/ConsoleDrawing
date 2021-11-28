@@ -1,71 +1,27 @@
 package com.cs.service;
 
-import com.cs.model.Shape2D;
-import com.cs.parse.ParseBucketFillInput;
-import com.cs.parse.ParseCanvasInput;
-import com.cs.parse.ParseLineInput;
-import com.cs.parse.ParseRectangleInput;
-import com.cs.print.PrintArray;
+import com.cs.parse.*;
+import com.cs.print.DisplayDrawing;
 
 import java.util.*;
 
 import static com.cs.constants.AppConstants.*;
-import static com.cs.constants.AppConstants.ErrorMessage.*;
 
 public class CommandConsoleService {
 
-    private ParseCanvasInput parseCanvasInput;
-    private ParseLineInput parseLineInput;
-    private ParseRectangleInput parseRectangleInput;
-    private ParseBucketFillInput parseBucketFillInput;
-    private Shape2D shape2D;
-    private PrintArray print;
+    private DrawingCommandParser drawingCommandParser;
+    private DisplayDrawing print;
 
     public CommandConsoleService() {
-        this.parseCanvasInput = new ParseCanvasInput();
-        this.parseLineInput = new ParseLineInput();
-        this.parseRectangleInput = new ParseRectangleInput();
-        this.parseBucketFillInput = new ParseBucketFillInput();
-        this.shape2D = new Shape2D();
-        this.print = new PrintArray();
+        this.drawingCommandParser = new DrawingCommandParser();
+        this.print = new DisplayDrawing();
     }
 
     private char[][] drawing;
 
     public char[][] processCommand(String command, Scanner scanner) {
-        String[] userInputArray = command.split(String.valueOf(SPACE));
-
-        switch (userInputArray[0]) {
-            case CANVAS:
-                drawing = parseCanvasInput.parseCanvas(userInputArray, drawing, shape2D);
-                break;
-            case LINE:
-                parseLineInput.parseLineInput(userInputArray, drawing, shape2D);
-                break;
-            case RECTANGLE:
-                parseRectangleInput.parseRectangleInput(userInputArray, drawing, shape2D);
-                break;
-            case BUCKET_FILL:
-                parseBucketFillInput.parseBucketFillInput(userInputArray, drawing, shape2D);
-                break;
-            case QUIT:
-                closeScanner(scanner);
-                return null;
-            case EMPTY_STRING:
-                return null;
-            default:
-                System.out.println(ERROR_MESSAGE + NOT_VALID_COMMAND);
-        }
+        drawing = drawingCommandParser.processCommand(command, drawing, scanner);
         return drawing;
-    }
-
-    private void closeScanner(Scanner scanner) {
-        try {
-            if (scanner != null)
-                scanner.close();
-        } catch (Exception e) {
-            System.out.println(SCANNER_NOT_CLOSED);
-        }
     }
 
     public void displayConsoleDrawing(char[][] chars) {

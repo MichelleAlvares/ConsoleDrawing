@@ -14,7 +14,7 @@ public class DrawCanvas implements Draw {
     }
 
     @Override
-    public void draw(Shape2D canvas, char[][] currentState) {
+    public void draw(Shape2D canvas, char[][] drawing) {
         if (canvasValidation.valid(canvas)) {
             int w = canvas.getWidth();
             int h = canvas.getHeight();
@@ -25,14 +25,14 @@ public class DrawCanvas implements Draw {
                 //j iterates along the x axis
                 for (int j = 0; j < w; j++) {
                     if (i == 0 || i == h + 1) {
-                        currentState[i][j] = DASH;
+                        drawing[i][j] = DASH;
                     } else if (j == 0 || j == w - 1) {
-                        currentState[i][j] = PIPE;
+                        drawing[i][j] = PIPE;
                     } else {
-                        currentState[i][j] = SPACE;
+                        drawing[i][j] = SPACE;
                     }
                 }
             }
-        } else canvasValidation.printInvalidInputMessage();
+        } else canvasValidation.displayInvalidInputMessage();
     }
 }

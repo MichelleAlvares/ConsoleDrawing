@@ -22,8 +22,8 @@ Q                       |Should quit the program.
 
 
 
-**How to run the program:**
-Use JRE Version 11 to execute the jar file
+**How to run the program:** <br />
+Use JRE Version 11 to execute the jar file <br />
 java -jar drawing-console-program.jar
 
 **Assumptions:**

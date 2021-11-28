@@ -37,7 +37,6 @@ class DrawRectangleTest {
     @Test
     void pointsNotInOrder() {
         Mockito.when(rectangleValidation.valid(Mockito.any())).thenReturn(false);
-        //Mockito.when(rectangleValidation.displayInvalidInputMessage()).thenCallRealMethod(false);
         //x1,y1's position if to the right of x2,y2 hence cannot draw the rectangle.
         drawRectangle.draw(new Rectangle(10, 8, "R", new Point(7, 9), new Point(6, 8)), new char[][]{});
         Mockito.verify(drawLine, Mockito.never()).draw(Mockito.any(), Mockito.any());

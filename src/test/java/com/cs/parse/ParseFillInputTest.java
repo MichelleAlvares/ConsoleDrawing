@@ -46,7 +46,7 @@ class ParseFillInputTest {
     }
 
     @Test
-    void valiidationFailed() {
+    void validationFailed() {
         Mockito.when(inputParameterValidation.valid(Mockito.anyString(), Mockito.any(), Mockito.any())).thenReturn(false);
 
         parseBucketFillInput.parseBucketFillInput(new String[]{BUCKET_FILL, "1", "2", "o"}, new char[][]{}, new Fill(5, 5, BUCKET_FILL, new Point(1, 2), 'o'));

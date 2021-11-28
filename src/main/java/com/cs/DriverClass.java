@@ -1,31 +1,30 @@
 package com.cs;
 
-import com.cs.service.CommandConsoleService;
-
 import java.util.Scanner;
+
+import com.cs.console.CommandConsole;
 
 import static com.cs.constants.AppConstants.EMPTY_STRING;
 
 class DriverClass {
-    private static CommandConsoleService consoleService = new CommandConsoleService();
+    private static CommandConsole commandConsole = new CommandConsole();
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in).useDelimiter(EMPTY_STRING);
-        consoleService.welcomeMessage();
+        commandConsole.displayWelcomeMessage();
 
-        char[][] consoleDrawing;
         String command;
-        boolean consoleInput = consoleService.isConsoleCommandInputPresent(scanner);
+        boolean consoleInput = commandConsole.isConsoleCommandInputPresent(scanner);
 
         while (consoleInput) {
             command = scanner.nextLine();
-            consoleDrawing = consoleService.processCommand(command, scanner);
+           commandConsole.processCommand(command, scanner);
 
-            consoleService.printCharArray(consoleDrawing);
+            commandConsole.displayDrawing();
 
-            consoleService.askUserToEnterNextCommand(command);
+            commandConsole.askUserToEnterNextCommand(command);
 
-            consoleInput = consoleService.isConsoleCommandInputPresent(scanner);
+            consoleInput = commandConsole.isConsoleCommandInputPresent(scanner);
         }
     }
 }

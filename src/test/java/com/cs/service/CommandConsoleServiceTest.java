@@ -1,5 +1,6 @@
 package com.cs.service;
 
+import com.cs.console.CommandConsole;
 import com.cs.parse.ParseBucketFillInput;
 import com.cs.parse.ParseCanvasInput;
 import com.cs.parse.ParseLineInput;
@@ -27,7 +28,7 @@ class CommandConsoleServiceTest {
     @Mock
     private ParseBucketFillInput parseBucketFillInput;
     @InjectMocks
-    private CommandConsoleService consoleService = new CommandConsoleService();
+    private CommandConsole consoleService = new CommandConsole();
 
     @Test
     void processScannerInputCanvasTest() {

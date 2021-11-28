@@ -20,13 +20,14 @@ public class ParseCanvasInput {
         this.drawCanvas = new DrawCanvas();
     }
 
-    public char[][] parseCanvas(String[] userInputArray, Shape2D shape2D) {
-        if (inputParameterValidation.areCorrectNoOfParametersEntered(CANVAS, userInputArray)
-                && inputParameterValidation.areParameterTypesCorrect(CANVAS, userInputArray)) {
+    public boolean parseCanvas(String[] userInputArray, Shape2D shape2D,char[][] drawing) {
+    	boolean res = inputParameterValidation.validate();
+        if (res) {
             Canvas c = (Canvas) canvasUtil.getShape(userInputArray, shape2D);
-            char[][] drawing = new char[c.getHeight() + 2][c.getWidth() + 2];
+             drawing = new char[c.getHeight() + 2][c.getWidth() + 2];
             drawCanvas.draw(c, drawing);
-            return drawing;
-        } else return null;
+            
+        } 
+        return res;
     }
 }

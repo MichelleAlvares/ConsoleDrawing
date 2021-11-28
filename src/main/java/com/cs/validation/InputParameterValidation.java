@@ -2,9 +2,34 @@ package com.cs.validation;
 
 import java.util.Map;
 
+import com.cs.model.Shape2D;
+
 import static com.cs.constants.AppConstants.*;
 
 public class InputParameterValidation {
+	
+	public boolean validateCanvasInputParam(String[] userInputArray, char[][] drawing, Shape2D shape2D) {
+		
+		if(!shapeType.equals(CANVAS)) {
+			isCanvasDrawn(userInputArray);
+		}
+		areCorrectNoOfParametersEntered(CANVAS, userInputArray);
+		areParameterTypesCorrect(CANVAS, userInputArray);
+		
+		
+	}
+	
+	public boolean validateInputParam(String[] userInputArray, char[][] drawing, Shape2D shape2D) {
+		
+		if(!shapeType.equals(CANVAS)) {
+			isCanvasDrawn(userInputArray);
+		}
+		areCorrectNoOfParametersEntered(CANVAS, userInputArray);
+		areParameterTypesCorrect(CANVAS, userInputArray);
+		
+		
+	}
+	
 
     public boolean areCorrectNoOfParametersEntered(String type, String[] userInputArray) {
         if (userInputArray.length != NO_OF_PARAMETERS.get(type) + 1) {

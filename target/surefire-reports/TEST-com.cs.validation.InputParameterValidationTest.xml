@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.cs.validation.InputParameterValidationTest" time="0.044" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.cs.validation.InputParameterValidationTest" time="0.075" tests="11" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="11.0.4+10-LTS"/>
@@ -64,7 +64,15 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="isCanvasDrawnTest" classname="com.cs.validation.InputParameterValidationTest" time="0.006"/>
-  <testcase name="areParameterTypesCorrectTest" classname="com.cs.validation.InputParameterValidationTest" time="0.03"/>
-  <testcase name="areCorrectNoOfParametersEnteredTest" classname="com.cs.validation.InputParameterValidationTest" time="0.006"/>
+  <testcase name="invalidFillCommandTest" classname="com.cs.validation.InputParameterValidationTest" time="0.028"/>
+  <testcase name="invalidRectangleCommandTest" classname="com.cs.validation.InputParameterValidationTest" time="0.01"/>
+  <testcase name="validLineCommandTest" classname="com.cs.validation.InputParameterValidationTest" time="0"/>
+  <testcase name="validCanvasCommandTest" classname="com.cs.validation.InputParameterValidationTest" time="0"/>
+  <testcase name="validFillCommandTest" classname="com.cs.validation.InputParameterValidationTest" time="0"/>
+  <testcase name="invalidCanvasCommandTest" classname="com.cs.validation.InputParameterValidationTest" time="0.009"/>
+  <testcase name="isCanvasDrawnTest" classname="com.cs.validation.InputParameterValidationTest" time="0.005"/>
+  <testcase name="invalidLineCommandTest" classname="com.cs.validation.InputParameterValidationTest" time="0.01"/>
+  <testcase name="areParameterTypesCorrectTest" classname="com.cs.validation.InputParameterValidationTest" time="0.007"/>
+  <testcase name="validRectangleCommandTest" classname="com.cs.validation.InputParameterValidationTest" time="0"/>
+  <testcase name="areCorrectNoOfParametersEnteredTest" classname="com.cs.validation.InputParameterValidationTest" time="0.002"/>
 </testsuite>

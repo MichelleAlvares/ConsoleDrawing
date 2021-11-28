@@ -14,14 +14,14 @@ public class ParseBucketFillInput {
     private BucketFillUtil bucketFillUtil;
     private BucketFill bucketFill;
 
-    public ParseBucketFillInput() {
+    ParseBucketFillInput() {
         this.inputParameterValidation = new InputParameterValidation();
         this.bucketFillUtil = new BucketFillUtil();
         this.bucketFill = new BucketFill();
     }
 
     public void parseBucketFillInput(String[] userInputArray, char[][] drawing, Shape2D shape2D) {
-        if (inputParameterValidation.inputParameterValidation(BUCKET_FILL, drawing, userInputArray)) {
+        if (inputParameterValidation.valid(BUCKET_FILL, drawing, userInputArray)) {
             Fill b = (Fill) bucketFillUtil.getShape(userInputArray, shape2D);
             bucketFill.draw(b, drawing);
         }

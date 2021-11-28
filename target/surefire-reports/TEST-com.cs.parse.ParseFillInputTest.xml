@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.cs.parse.ParseFillInputTest" time="0.033" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.cs.parse.ParseFillInputTest" time="0.029" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="11.0.4+10-LTS"/>
@@ -65,7 +65,5 @@
     <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase name="handleBucketFillInput" classname="com.cs.parse.ParseFillInputTest" time="0.024"/>
-  <testcase name="handleBucketFillInCorrectNoOfParametersEntered" classname="com.cs.parse.ParseFillInputTest" time="0.001"/>
-  <testcase name="handleBucketFillIncorrectParameterType" classname="com.cs.parse.ParseFillInputTest" time="0.003"/>
-  <testcase name="handleBucketFillCanvasNotDrawn" classname="com.cs.parse.ParseFillInputTest" time="0.001"/>
+  <testcase name="valiidationFailed" classname="com.cs.parse.ParseFillInputTest" time="0.002"/>
 </testsuite>

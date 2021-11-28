@@ -1,4 +1,3 @@
-/*
 package com.cs.parse;
 
 import com.cs.draw.DrawRectangle;
@@ -38,9 +37,7 @@ class ParseRectangleInputTest {
 
     @Test
     void handleRectangleInput() {
-        Mockito.when(inputParameterValidation.isCanvasDrawn(Mockito.any())).thenReturn(true);
-        Mockito.when(inputParameterValidation.areCorrectNoOfParametersEntered(Mockito.anyString(), Mockito.any())).thenReturn(true);
-        Mockito.when(inputParameterValidation.areParameterTypesCorrect(Mockito.anyString(), Mockito.any())).thenReturn(true);
+        Mockito.when(inputParameterValidation.valid(Mockito.anyString(), Mockito.any(), Mockito.any())).thenReturn(true);
         Mockito.when(rectangleUtil.getShape(Mockito.any(), Mockito.any())).thenReturn(new Rectangle());
         Mockito.doNothing().when(drawRectangle).draw(Mockito.any(), Mockito.any());
 
@@ -49,30 +46,10 @@ class ParseRectangleInputTest {
     }
 
     @Test
-    void handleRectangleCanvasNotDrawn() {
-        Mockito.when(inputParameterValidation.isCanvasDrawn(Mockito.any())).thenReturn(false);
+    void validationFailed() {
+        Mockito.when(inputParameterValidation.valid(Mockito.anyString(), Mockito.any(), Mockito.any())).thenReturn(false);
 
         parseRectangleInput.parseRectangleInput(new String[]{RECTANGLE, "1", "2", "1", "5"}, new char[][]{}, new Rectangle(5, 5, RECTANGLE, new Point(1, 2), new Point(1, 5)));
         Mockito.verify(drawRectangle, Mockito.never()).draw(Mockito.any(), Mockito.any());
     }
-
-    @Test
-    void handleRectangleInCorrectNoOfParametersEntered() {
-        Mockito.when(inputParameterValidation.isCanvasDrawn(Mockito.any())).thenReturn(true);
-        Mockito.when(inputParameterValidation.areCorrectNoOfParametersEntered(Mockito.anyString(), Mockito.any())).thenReturn(false);
-
-        parseRectangleInput.parseRectangleInput(new String[]{RECTANGLE, "1", "2", "1", "5", "9"}, new char[][]{}, new Rectangle(5, 5, RECTANGLE, new Point(1, 2), new Point(1, 5)));
-        Mockito.verify(drawRectangle, Mockito.never()).draw(Mockito.any(), Mockito.any());
-    }
-
-    @Test
-    void handleRectangleIncorrectParameterType() {
-        Mockito.when(inputParameterValidation.isCanvasDrawn(Mockito.any())).thenReturn(true);
-        Mockito.when(inputParameterValidation.areCorrectNoOfParametersEntered(Mockito.anyString(), Mockito.any())).thenReturn(true);
-        Mockito.when(inputParameterValidation.areParameterTypesCorrect(Mockito.anyString(), Mockito.any())).thenReturn(false);
-
-        parseRectangleInput.parseRectangleInput(new String[]{RECTANGLE, "1", "i", "1", "5"}, new char[][]{}, new Rectangle(5, 5, RECTANGLE, new Point(1, 2), new Point(1, 5)));
-        Mockito.verify(drawRectangle, Mockito.never()).draw(Mockito.any(), Mockito.any());
-    }
 }
-*/

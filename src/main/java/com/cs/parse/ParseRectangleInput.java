@@ -6,7 +6,6 @@ import com.cs.model.Shape2D;
 import com.cs.util.RectangleUtil;
 import com.cs.validation.InputParameterValidation;
 
-import static com.cs.constants.AppConstants.BUCKET_FILL;
 import static com.cs.constants.AppConstants.RECTANGLE;
 
 public class ParseRectangleInput {
@@ -15,14 +14,14 @@ public class ParseRectangleInput {
     private RectangleUtil rectangleUtil;
     private DrawRectangle drawRectangle;
 
-    public ParseRectangleInput() {
+    ParseRectangleInput() {
         this.inputParameterValidation = new InputParameterValidation();
         this.rectangleUtil = new RectangleUtil();
         this.drawRectangle = new DrawRectangle();
     }
 
     public void parseRectangleInput(String[] userInputArray, char[][] drawing, Shape2D shape2D) {
-        if (inputParameterValidation.inputParameterValidation(RECTANGLE, drawing, userInputArray)) {
+        if (inputParameterValidation.valid(RECTANGLE, drawing, userInputArray)) {
             Rectangle r = (Rectangle) rectangleUtil.getShape(userInputArray, shape2D);
             drawRectangle.draw(r, drawing);
         }

@@ -1,4 +1,3 @@
-/*
 package com.cs.parse;
 
 import com.cs.draw.DrawCanvas;
@@ -28,30 +27,19 @@ class ParseCanvasInputTest {
 
     @Test
     void handleCanvasInput() {
-        Mockito.when(inputParameterValidation.areCorrectNoOfParametersEntered(Mockito.anyString(), Mockito.any())).thenReturn(true);
-        Mockito.when(inputParameterValidation.areParameterTypesCorrect(Mockito.anyString(), Mockito.any())).thenReturn(true);
+        Mockito.when(inputParameterValidation.valid(Mockito.anyString(), Mockito.any(), Mockito.any())).thenReturn(true);
         Mockito.when(canvasUtil.getShape(Mockito.any(), Mockito.any())).thenReturn(new Canvas());
         Mockito.doNothing().when(drawCanvas).draw(Mockito.any(), Mockito.any());
 
-        parseCanvasInput.parseCanvas(new String[]{CANVAS, "1", "2"}, new Canvas(5, 5, CANVAS));
+        parseCanvasInput.parseCanvas(new String[]{CANVAS, "1", "2"}, new char[][]{}, new Canvas(5, 5, CANVAS));
         Mockito.verify(drawCanvas, Mockito.times(1)).draw(Mockito.any(), Mockito.any());
     }
 
     @Test
-    void handleCanvasNoOfParametersIncorrect() {
-        Mockito.when(inputParameterValidation.areCorrectNoOfParametersEntered(Mockito.anyString(), Mockito.any())).thenReturn(true);
-
-        parseCanvasInput.parseCanvas(new String[]{CANVAS, "1", "2", "o"}, new Canvas(5, 5, CANVAS));
-        Mockito.verify(drawCanvas, Mockito.never()).draw(Mockito.any(), Mockito.any());
-    }
-
-    @Test
     void handleCanvasInputValidationFailed() {
-        Mockito.when(inputParameterValidation.areCorrectNoOfParametersEntered(Mockito.anyString(), Mockito.any())).thenReturn(true);
-        Mockito.when(inputParameterValidation.areParameterTypesCorrect(Mockito.anyString(), Mockito.any())).thenReturn(false);
+        Mockito.when(inputParameterValidation.valid(Mockito.anyString(), Mockito.any(), Mockito.any())).thenReturn(false);
 
-        parseCanvasInput.parseCanvas(new String[]{CANVAS, "1", "y"}, new Canvas(5, 5, CANVAS));
+        parseCanvasInput.parseCanvas(new String[]{CANVAS, "1", "y"}, new char[][]{}, new Canvas(5, 5, CANVAS));
         Mockito.verify(drawCanvas, Mockito.never()).draw(Mockito.any(), Mockito.any());
     }
 }
-*/

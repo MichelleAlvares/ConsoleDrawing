@@ -1,4 +1,3 @@
-/*
 package com.cs.parse;
 
 import com.cs.draw.BucketFill;
@@ -38,9 +37,7 @@ class ParseFillInputTest {
 
     @Test
     void handleBucketFillInput() {
-        Mockito.when(inputParameterValidation.isCanvasDrawn(Mockito.any())).thenReturn(true);
-        Mockito.when(inputParameterValidation.areCorrectNoOfParametersEntered(Mockito.anyString(), Mockito.any())).thenReturn(true);
-        Mockito.when(inputParameterValidation.areParameterTypesCorrect(Mockito.anyString(), Mockito.any())).thenReturn(true);
+        Mockito.when(inputParameterValidation.valid(Mockito.anyString(), Mockito.any(), Mockito.any())).thenReturn(true);
         Mockito.when(bucketFillUtil.getShape(Mockito.any(), Mockito.any())).thenReturn(new Fill());
         Mockito.doNothing().when(bucketFill).draw(Mockito.any(), Mockito.any());
 
@@ -49,30 +46,10 @@ class ParseFillInputTest {
     }
 
     @Test
-    void handleBucketFillCanvasNotDrawn() {
-        Mockito.when(inputParameterValidation.isCanvasDrawn(Mockito.any())).thenReturn(false);
+    void valiidationFailed() {
+        Mockito.when(inputParameterValidation.valid(Mockito.anyString(), Mockito.any(), Mockito.any())).thenReturn(false);
 
         parseBucketFillInput.parseBucketFillInput(new String[]{BUCKET_FILL, "1", "2", "o"}, new char[][]{}, new Fill(5, 5, BUCKET_FILL, new Point(1, 2), 'o'));
         Mockito.verify(bucketFill, Mockito.never()).draw(Mockito.any(), Mockito.any());
     }
-
-    @Test
-    void handleBucketFillInCorrectNoOfParametersEntered() {
-        Mockito.when(inputParameterValidation.isCanvasDrawn(Mockito.any())).thenReturn(true);
-        Mockito.when(inputParameterValidation.areCorrectNoOfParametersEntered(Mockito.anyString(), Mockito.any())).thenReturn(false);
-
-        parseBucketFillInput.parseBucketFillInput(new String[]{BUCKET_FILL, "1", "y"}, new char[][]{}, new Fill(5, 5, BUCKET_FILL, new Point(1, 2), 'o'));
-        Mockito.verify(bucketFill, Mockito.never()).draw(Mockito.any(), Mockito.any());
-    }
-
-    @Test
-    void handleBucketFillIncorrectParameterType() {
-        Mockito.when(inputParameterValidation.isCanvasDrawn(Mockito.any())).thenReturn(true);
-        Mockito.when(inputParameterValidation.areCorrectNoOfParametersEntered(Mockito.anyString(), Mockito.any())).thenReturn(true);
-        Mockito.when(inputParameterValidation.areParameterTypesCorrect(Mockito.anyString(), Mockito.any())).thenReturn(false);
-
-        parseBucketFillInput.parseBucketFillInput(new String[]{BUCKET_FILL, "1", "y", "o"}, new char[][]{}, new Fill(5, 5, BUCKET_FILL, new Point(1, 2), 'o'));
-        Mockito.verify(bucketFill, Mockito.never()).draw(Mockito.any(), Mockito.any());
-    }
 }
-*/

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: com.cs.draw.DrawLineTest
+Test set: com.cs.parse.ParseQuitInputTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec - in com.cs.draw.DrawLineTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in com.cs.parse.ParseQuitInputTest

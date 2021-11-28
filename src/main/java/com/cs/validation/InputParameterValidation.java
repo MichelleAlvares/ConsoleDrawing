@@ -1,7 +1,6 @@
 package com.cs.validation;
 
 import java.util.Map;
-import java.util.function.Predicate;
 
 import static com.cs.constants.AppConstants.*;
 import static com.cs.constants.AppConstants.ErrorMessage.*;
@@ -9,15 +8,13 @@ import static com.cs.constants.AppConstants.InformationalMessage.*;
 
 public class InputParameterValidation {
 
-    public boolean inputParameterValidation(String type, char[][] drawing, String[] userInputArray) {
+    public boolean valid(String type, char[][] drawing, String[] userInputArray) {
         if (!CANVAS.equals(type)) {
-            return isCanvasDrawn.test(drawing) && areCorrectNoOfParametersEntered(type, userInputArray) && areParameterTypesCorrect(type, userInputArray);
+            return isCanvasDrawn(drawing) && areCorrectNoOfParametersEntered(type, userInputArray) && areParameterTypesCorrect(type, userInputArray);
         } else {
             return areCorrectNoOfParametersEntered(type, userInputArray) && areParameterTypesCorrect(type, userInputArray);
         }
     }
-
-    Predicate<char[][]> isCanvasDrawn = (drawing) -> drawing != null && drawing.length != 0;
 
     boolean areCorrectNoOfParametersEntered(String type, String[] userInputArray) {
         if (userInputArray.length != NO_OF_PARAMETERS.get(type) + 1) {
@@ -49,6 +46,13 @@ public class InputParameterValidation {
             }
         }
         return true;
+    }
+
+    boolean isCanvasDrawn(char[][] drawing) {
+        if (drawing == null || drawing.length == 0) {
+            canvasIsNotDrawn();
+            return false;
+        } else return true;
     }
 
     private void numberGreaterThanZeroExpected() {

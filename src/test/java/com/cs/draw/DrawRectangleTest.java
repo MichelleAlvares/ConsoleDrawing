@@ -37,9 +37,11 @@ class DrawRectangleTest {
     @Test
     void pointsNotInOrder() {
         Mockito.when(rectangleValidation.valid(Mockito.any())).thenReturn(false);
+        //Mockito.when(rectangleValidation.displayInvalidInputMessage()).thenCallRealMethod(false);
         //x1,y1's position if to the right of x2,y2 hence cannot draw the rectangle.
         drawRectangle.draw(new Rectangle(10, 8, "R", new Point(7, 9), new Point(6, 8)), new char[][]{});
         Mockito.verify(drawLine, Mockito.never()).draw(Mockito.any(), Mockito.any());
+        Mockito.verify(rectangleValidation, Mockito.times(1)).displayInvalidInputMessage();
     }
 
     @Test
@@ -48,6 +50,7 @@ class DrawRectangleTest {
         //y1=y2 hence its a line. cannot draw a rectangle
         drawRectangle.draw(new Rectangle(10, 8, "R", new Point(4, 8), new Point(6, 8)), new char[][]{});
         Mockito.verify(drawLine, Mockito.never()).draw(Mockito.any(), Mockito.any());
+        Mockito.verify(rectangleValidation, Mockito.times(1)).displayInvalidInputMessage();
     }
 
     @Test
@@ -56,5 +59,6 @@ class DrawRectangleTest {
         Mockito.when(borderValidation.withinBorder(Mockito.anyInt(), Mockito.anyInt(), Mockito.anyInt(), Mockito.anyInt())).thenReturn(false);
         drawRectangle.draw(new Rectangle(10, 8, "R", new Point(4, 8), new Point(6, 19)), new char[][]{});
         Mockito.verify(drawLine, Mockito.never()).draw(Mockito.any(), Mockito.any());
+        Mockito.verify(borderValidation, Mockito.times(1)).displayInvalidInputMessage();
     }
 }

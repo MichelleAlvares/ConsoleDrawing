@@ -6,6 +6,7 @@ import com.cs.model.Shape2D;
 import com.cs.util.LineUtil;
 import com.cs.validation.InputParameterValidation;
 
+import static com.cs.constants.AppConstants.BUCKET_FILL;
 import static com.cs.constants.AppConstants.LINE;
 
 public class ParseLineInput {
@@ -21,9 +22,7 @@ public class ParseLineInput {
     }
 
     public void parseLineInput(String[] userInputArray, char[][] drawing, Shape2D shape2D) {
-        if (inputParameterValidation.isCanvasDrawn(drawing)
-                && inputParameterValidation.areCorrectNoOfParametersEntered(LINE, userInputArray)
-                && (inputParameterValidation.areParameterTypesCorrect(LINE, userInputArray))) {
+        if (inputParameterValidation.inputParameterValidation(LINE, drawing, userInputArray)) {
             Line l = (Line) lineUtil.getShape(userInputArray, shape2D);
             drawLine.draw(l, drawing);
         }

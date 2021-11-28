@@ -5,6 +5,7 @@ import com.cs.model.Shape2D;
 import com.cs.print.PrintMessage;
 
 import static com.cs.constants.AppConstants.*;
+import static com.cs.constants.AppConstants.ErrorMessage.*;
 
 public class RectangleValidation implements Validation, PrintMessage {
 
@@ -17,7 +18,7 @@ public class RectangleValidation implements Validation, PrintMessage {
 
     @Override
     public void printInvalidInputMessage() {
-        System.out.println(ERROR_MESSAGE + "Invalid Input. Rectangle cannot be drawn. First point should be the top left corner and the second point should be the bottom right corner");
+        System.out.println(ERROR_MESSAGE + RECTANGLE_VALIDATION_FAILED_MESSAGE);
         System.out.println(USER_INSTRUCTIONS);
     }
 }

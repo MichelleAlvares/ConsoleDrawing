@@ -2,7 +2,7 @@ package com.cs.print;
 
 public class PrintArray {
 
-    public void printCharArray(char[][] chars) {
+    public void printDrawing(char[][] chars) {
         if (chars != null && chars.length > 0) {
             StringBuilder sb = new StringBuilder();
             for (char[] l : chars) {

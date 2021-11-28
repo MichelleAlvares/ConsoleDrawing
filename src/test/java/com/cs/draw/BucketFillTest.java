@@ -14,7 +14,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.lang.reflect.Method;
 
 @ExtendWith(MockitoExtension.class)
-class ExecuteFillTest {
+class BucketFillTest {
 
     @Mock
     private BorderValidation borderValidation;

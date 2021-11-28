@@ -29,7 +29,6 @@ public class AppConstants {
             "                programs.\n" +
             "Q               To quit the program.";
 
-    public static final String ERROR_MESSAGE = "\nERROR MESSAGE: ";
     public static final String ENTER_COMMAND = "enter command: ";
     public static final String NOT_VALID_COMMAND = "Not a valid command";
     public static final String SCANNER_NOT_CLOSED = "Unable to close Scanner";
@@ -47,4 +46,20 @@ public class AppConstants {
             BUCKET_FILL, Map.of(1, INT, 2, INT, 3, CHAR));
 
 
+    public static class ErrorMessage {
+        public static final String ERROR_MESSAGE = "\nERROR MESSAGE: ";
+        public static final String NUMBER_GREATER_THAN_ZERO_MESSAGE = "Number greater than 0 is expected";
+        public static final String DRAW_CANVAS_MESSAGE = "Please draw Canvas first";
+        public static final String CANVAS_VALIDATION_FAILED_MESSAGE = "Invalid Input. Canvas cannot be drawn. Dimensions should be greater than 0.";
+        public static final String BORDER_VALIDATION_FAILED_MESSAGE = "Invalid Input. Point is not within border";
+        public static final String HORIZONTAL_VERTICAL_LINE_VALIDATION_FAILED_MESSAGE = "Invalid Input. Only Horizontal and Vertical lines are supported.";
+        public static final String RECTANGLE_VALIDATION_FAILED_MESSAGE = "Invalid Input. Rectangle cannot be drawn. First point should be the top left corner and the second point should be the bottom right corner";
+    }
+
+    public static class InformationalMessage {
+        public static final String INPUT_PARAMETERS = " input parameters.";
+        public static final String NEEDS = " needs ";
+        public static final String NEEDS_PARAMETERS = " needs parameter ";
+        public static final String TYPE_OF_PARAMETER = " to be of type ";
+    }
 }

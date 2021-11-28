@@ -6,12 +6,12 @@ import java.util.Scanner;
 
 import static com.cs.constants.AppConstants.EMPTY_STRING;
 
-class DriverClass {
+class Driver {
     private static CommandConsoleService consoleService = new CommandConsoleService();
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in).useDelimiter(EMPTY_STRING);
-        consoleService.welcomeMessage();
+        consoleService.displayWelcomeMessage();
 
         char[][] consoleDrawing;
         String command;
@@ -21,7 +21,7 @@ class DriverClass {
             command = scanner.nextLine();
             consoleDrawing = consoleService.processCommand(command, scanner);
 
-            consoleService.printCharArray(consoleDrawing);
+            consoleService.displayConsoleDrawing(consoleDrawing);
 
             consoleService.askUserToEnterNextCommand(command);
 

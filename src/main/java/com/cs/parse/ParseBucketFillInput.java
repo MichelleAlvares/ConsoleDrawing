@@ -12,7 +12,6 @@ public class ParseBucketFillInput {
 
     private InputParameterValidation inputParameterValidation;
     private BucketFillUtil bucketFillUtil;
-    //private ExecuteBucketFill executeBucketFill;
     private BucketFill bucketFill;
 
     public ParseBucketFillInput() {
@@ -22,9 +21,7 @@ public class ParseBucketFillInput {
     }
 
     public void parseBucketFillInput(String[] userInputArray, char[][] drawing, Shape2D shape2D) {
-        if (inputParameterValidation.isCanvasDrawn(drawing)
-                && inputParameterValidation.areCorrectNoOfParametersEntered(BUCKET_FILL, userInputArray)
-                && inputParameterValidation.areParameterTypesCorrect(BUCKET_FILL, userInputArray)) {
+        if (inputParameterValidation.inputParameterValidation(BUCKET_FILL, drawing, userInputArray)) {
             Fill b = (Fill) bucketFillUtil.getShape(userInputArray, shape2D);
             bucketFill.draw(b, drawing);
         }

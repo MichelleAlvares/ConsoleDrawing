@@ -2,7 +2,7 @@ package com.cs.validation;
 
 import com.cs.print.PrintMessage;
 
-import static com.cs.constants.AppConstants.ERROR_MESSAGE;
+import static com.cs.constants.AppConstants.ErrorMessage.*;
 import static com.cs.constants.AppConstants.USER_INSTRUCTIONS;
 
 public class BorderValidation implements PrintMessage {
@@ -13,7 +13,7 @@ public class BorderValidation implements PrintMessage {
 
     @Override
     public void printInvalidInputMessage() {
-        System.out.println(ERROR_MESSAGE + "Invalid Input. Point is not within border");
+        System.out.println(ERROR_MESSAGE + BORDER_VALIDATION_FAILED_MESSAGE);
         System.out.println(USER_INSTRUCTIONS);
     }
 }

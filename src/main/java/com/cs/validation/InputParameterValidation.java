@@ -3,8 +3,18 @@ package com.cs.validation;
 import java.util.Map;
 
 import static com.cs.constants.AppConstants.*;
+import static com.cs.constants.AppConstants.ErrorMessage.*;
+import static com.cs.constants.AppConstants.InformationalMessage.*;
 
 public class InputParameterValidation {
+
+    public boolean inputParameterValidation(String type, char[][] drawing, String[] userInputArray) {
+        if (!CANVAS.equals(type)) {
+            return isCanvasDrawn(drawing) && areCorrectNoOfParametersEntered(type, userInputArray) && areParameterTypesCorrect(type, userInputArray);
+        } else {
+            return areCorrectNoOfParametersEntered(type, userInputArray) && areParameterTypesCorrect(type, userInputArray);
+        }
+    }
 
     public boolean areCorrectNoOfParametersEntered(String type, String[] userInputArray) {
         if (userInputArray.length != NO_OF_PARAMETERS.get(type) + 1) {
@@ -46,24 +56,24 @@ public class InputParameterValidation {
     }
 
     private void numberShouldBeGreaterThanZero() {
-        System.out.println(ERROR_MESSAGE + "Number greater than 0 is expected");
+        System.out.println(ERROR_MESSAGE + NUMBER_GREATER_THAN_ZERO_MESSAGE);
         System.out.println(USER_INSTRUCTIONS);
     }
 
     private void numberShouldBeGreaterThanZero(String type) {
-        System.out.println(ERROR_MESSAGE + type + " needs " + NO_OF_PARAMETERS.get(type) + " input parameters.");
+        System.out.println(ERROR_MESSAGE + type + NEEDS + NO_OF_PARAMETERS.get(type) + INPUT_PARAMETERS);
         System.out.println(USER_INSTRUCTIONS);
     }
 
     private void parameterTypeIsIncorrect(String type) {
         for (Map.Entry entry : EXPECTED_DATA_TYPES.get(type).entrySet()) {
-            System.out.println(ERROR_MESSAGE + type + " needs parameter " + entry.getKey() + " to be of type " + entry.getValue());
+            System.out.println(ERROR_MESSAGE + type + NEEDS_PARAMETERS + entry.getKey() + TYPE_OF_PARAMETER + entry.getValue());
         }
         System.out.println(USER_INSTRUCTIONS);
     }
 
     private void canvasIsNotDrawn() {
-        System.out.println(ERROR_MESSAGE + "Please draw Canvas first");
+        System.out.println(ERROR_MESSAGE + DRAW_CANVAS_MESSAGE);
         System.out.println(USER_INSTRUCTIONS);
     }
 }

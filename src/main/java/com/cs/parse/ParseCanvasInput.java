@@ -6,6 +6,7 @@ import com.cs.model.Shape2D;
 import com.cs.util.CanvasUtil;
 import com.cs.validation.InputParameterValidation;
 
+import static com.cs.constants.AppConstants.BUCKET_FILL;
 import static com.cs.constants.AppConstants.CANVAS;
 
 public class ParseCanvasInput {
@@ -20,11 +21,10 @@ public class ParseCanvasInput {
         this.drawCanvas = new DrawCanvas();
     }
 
-    public char[][] parseCanvas(String[] userInputArray, Shape2D shape2D) {
-        if (inputParameterValidation.areCorrectNoOfParametersEntered(CANVAS, userInputArray)
-                && inputParameterValidation.areParameterTypesCorrect(CANVAS, userInputArray)) {
+    public char[][] parseCanvas(String[] userInputArray, char[][] drawing, Shape2D shape2D) {
+        if (inputParameterValidation.inputParameterValidation(CANVAS, drawing, userInputArray)) {
             Canvas c = (Canvas) canvasUtil.getShape(userInputArray, shape2D);
-            char[][] drawing = new char[c.getHeight() + 2][c.getWidth() + 2];
+            drawing = new char[c.getHeight() + 2][c.getWidth() + 2];
             drawCanvas.draw(c, drawing);
             return drawing;
         } else return null;

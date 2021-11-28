@@ -5,6 +5,7 @@ import com.cs.model.Shape2D;
 import com.cs.print.PrintMessage;
 
 import static com.cs.constants.AppConstants.*;
+import static com.cs.constants.AppConstants.ErrorMessage.*;
 
 public class CanvasValidation implements Validation, PrintMessage {
 
@@ -16,7 +17,7 @@ public class CanvasValidation implements Validation, PrintMessage {
 
     @Override
     public void printInvalidInputMessage() {
-        System.out.println(ERROR_MESSAGE + "Invalid Input. Canvas cannot be drawn. Dimensions should be greater than 0.");
+        System.out.println(ERROR_MESSAGE + CANVAS_VALIDATION_FAILED_MESSAGE);
         System.out.println(USER_INSTRUCTIONS);
     }
 }

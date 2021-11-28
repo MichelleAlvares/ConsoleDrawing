@@ -10,6 +10,7 @@ import com.cs.print.PrintArray;
 import java.util.*;
 
 import static com.cs.constants.AppConstants.*;
+import static com.cs.constants.AppConstants.ErrorMessage.*;
 
 public class CommandConsoleService {
 
@@ -36,7 +37,7 @@ public class CommandConsoleService {
 
         switch (userInputArray[0]) {
             case CANVAS:
-                drawing = parseCanvasInput.parseCanvas(userInputArray, shape2D);
+                drawing = parseCanvasInput.parseCanvas(userInputArray, drawing, shape2D);
                 break;
             case LINE:
                 parseLineInput.parseLineInput(userInputArray, drawing, shape2D);
@@ -67,8 +68,8 @@ public class CommandConsoleService {
         }
     }
 
-    public void printCharArray(char[][] chars) {
-        print.printCharArray(chars);
+    public void displayConsoleDrawing(char[][] chars) {
+        print.printDrawing(chars);
     }
 
     public boolean isConsoleCommandInputPresent(Scanner scanner) {
@@ -82,7 +83,7 @@ public class CommandConsoleService {
         }
     }
 
-    public void welcomeMessage() {
+    public void displayWelcomeMessage() {
         System.out.println(USER_INSTRUCTIONS);
         System.out.print(ENTER_COMMAND);
     }

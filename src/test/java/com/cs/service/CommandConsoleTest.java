@@ -22,10 +22,10 @@ class CommandConsoleTest {
 
     @Test
     void processScannerInputCanvasTest() {
-        Mockito.when(drawingCommandParser.processCommand(Mockito.any(), Mockito.any(), Mockito.any())).thenReturn(new char[][]{{'-', '-', '-'}, {'|', ' ', '|'}, {'-', '-', '-'}});
+        Mockito.when(drawingCommandParser.parseCommand(Mockito.any(), Mockito.any(), Mockito.any())).thenReturn(new char[][]{{'-', '-', '-'}, {'|', ' ', '|'}, {'-', '-', '-'}});
         scanner = new Scanner("C 5 3");
         consoleService.processCommand("C 5 3", scanner);
-        Mockito.verify(drawingCommandParser, Mockito.times(1)).processCommand(Mockito.any(), Mockito.any(), Mockito.any());
+        Mockito.verify(drawingCommandParser, Mockito.times(1)).parseCommand(Mockito.any(), Mockito.any(), Mockito.any());
     }
 
     @Test

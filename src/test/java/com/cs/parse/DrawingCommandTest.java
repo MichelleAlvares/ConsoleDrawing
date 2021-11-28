@@ -28,7 +28,7 @@ class DrawingCommandTest {
     void processScannerInputCanvasTest() {
         Mockito.when(parseCanvasInput.parseCanvas(Mockito.any(), Mockito.any(), Mockito.any())).thenReturn(new char[][]{{'-', '-', '-'}, {'|', ' ', '|'}, {'-', '-', '-'}});
         scanner = new Scanner("C 5 3");
-        drawingCommandParser.processCommand("C 5 3", new char[][]{}, scanner);
+        drawingCommandParser.parseCommand("C 5 3", new char[][]{}, scanner);
         Mockito.verify(parseCanvasInput, Mockito.times(1)).parseCanvas(Mockito.any(), Mockito.any(), Mockito.any());
     }
 
@@ -36,7 +36,7 @@ class DrawingCommandTest {
     void processScannerInputLineTest() {
         Mockito.doNothing().when(parseLineInput).parseLineInput(Mockito.any(), Mockito.any(), Mockito.any());
         scanner = new Scanner("L 5 3 5 8");
-        drawingCommandParser.processCommand("L 5 3 5 8", new char[][]{}, scanner);
+        drawingCommandParser.parseCommand("L 5 3 5 8", new char[][]{}, scanner);
         Mockito.verify(parseLineInput, Mockito.times(1)).parseLineInput(Mockito.any(), Mockito.any(), Mockito.any());
     }
 
@@ -44,7 +44,7 @@ class DrawingCommandTest {
     void processScannerInputRectangleTest() {
         Mockito.doNothing().when(parseRectangleInput).parseRectangleInput(Mockito.any(), Mockito.any(), Mockito.any());
         scanner = new Scanner("R 5 3 5 8");
-        drawingCommandParser.processCommand("R 5 3 5 8", new char[][]{}, scanner);
+        drawingCommandParser.parseCommand("R 5 3 5 8", new char[][]{}, scanner);
         Mockito.verify(parseRectangleInput, Mockito.times(1)).parseRectangleInput(Mockito.any(), Mockito.any(), Mockito.any());
     }
 
@@ -52,14 +52,14 @@ class DrawingCommandTest {
     void processScannerInputFillTest() {
         Mockito.doNothing().when(parseBucketFillInput).parseBucketFillInput(Mockito.any(), Mockito.any(), Mockito.any());
         scanner = new Scanner("B 5 3 o");
-        drawingCommandParser.processCommand("B 5 3 o", new char[][]{}, scanner);
+        drawingCommandParser.parseCommand("B 5 3 o", new char[][]{}, scanner);
         Mockito.verify(parseBucketFillInput, Mockito.times(1)).parseBucketFillInput(Mockito.any(), Mockito.any(), Mockito.any());
     }
 
     @Test
     void processScannerQuitTest() {
         scanner = new Scanner("Q");
-        drawingCommandParser.processCommand("Q", new char[][]{}, scanner);
+        drawingCommandParser.parseCommand("Q", new char[][]{}, scanner);
         Mockito.verify(parseCanvasInput, Mockito.never()).parseCanvas(Mockito.any(), Mockito.any(), Mockito.any());
         Mockito.verify(parseLineInput, Mockito.never()).parseLineInput(Mockito.any(), Mockito.any(), Mockito.any());
         Mockito.verify(parseRectangleInput, Mockito.never()).parseRectangleInput(Mockito.any(), Mockito.any(), Mockito.any());
@@ -69,7 +69,7 @@ class DrawingCommandTest {
     @Test
     void processScannerInvalidCommandTest() {
         scanner = new Scanner("7 5 3 o");
-        drawingCommandParser.processCommand("7 5 3 o", new char[][]{}, scanner);
+        drawingCommandParser.parseCommand("7 5 3 o", new char[][]{}, scanner);
         Mockito.verify(parseCanvasInput, Mockito.never()).parseCanvas(Mockito.any(), Mockito.any(), Mockito.any());
         Mockito.verify(parseLineInput, Mockito.never()).parseLineInput(Mockito.any(), Mockito.any(), Mockito.any());
         Mockito.verify(parseRectangleInput, Mockito.never()).parseRectangleInput(Mockito.any(), Mockito.any(), Mockito.any());
@@ -79,7 +79,7 @@ class DrawingCommandTest {
     @Test
     void processScannerEmptyInputTest() {
         scanner = new Scanner("");
-        drawingCommandParser.processCommand("", new char[][]{}, scanner);
+        drawingCommandParser.parseCommand("", new char[][]{}, scanner);
         Mockito.verify(parseCanvasInput, Mockito.never()).parseCanvas(Mockito.any(), Mockito.any(), Mockito.any());
         Mockito.verify(parseLineInput, Mockito.never()).parseLineInput(Mockito.any(), Mockito.any(), Mockito.any());
         Mockito.verify(parseRectangleInput, Mockito.never()).parseRectangleInput(Mockito.any(), Mockito.any(), Mockito.any());

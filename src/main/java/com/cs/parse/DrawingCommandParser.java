@@ -5,7 +5,7 @@ import com.cs.model.Shape2D;
 import java.util.Scanner;
 
 import static com.cs.constants.AppConstants.*;
-import static com.cs.constants.AppConstants.ErrorMessage.ERROR_MESSAGE;
+import static com.cs.constants.AppConstants.ErrorMessage.*;
 
 public class DrawingCommandParser {
 
@@ -24,7 +24,7 @@ public class DrawingCommandParser {
         this.parseQuitInput = new ParseQuitInput();
         this.shape2D = new Shape2D();
     }
-    public char[][] processCommand(String command, char[][] drawing, Scanner scanner) {
+    public char[][] parseCommand(String command, char[][] drawing, Scanner scanner) {
         String[] userInputArray = command.split(String.valueOf(SPACE));
 
         switch (userInputArray[0]) {

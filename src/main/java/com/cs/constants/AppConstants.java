@@ -16,21 +16,6 @@ public class AppConstants {
     public static final String QUIT = "Q";
     public static final String EMPTY_STRING = "";
 
-    public static final String USER_INSTRUCTIONS = "\nCommand \t\tDescription\n" +
-            "C w h           To create a new canvas of width w and height h.\n" +
-            "L x1 y1 x2 y2   To create a new line from (x1,y1) to (x2,y2). Currently only\n" +
-            "                horizontal or vertical lines are supported. Horizontal and vertical lines\n" +
-            "                will be drawn using the 'x' character.\n" +
-            "R x1 y1 x2 y2   To create a new rectangle, whose upper left corner is (x1,y1) and\n" +
-            "                lower right corner is (x2,y2). Horizontal and vertical lines will be drawn\n" +
-            "                using the 'x' character.\n" +
-            "B x y c         To fill the entire area connected to (x,y) with \"colour\" c. The\n" +
-            "                behavior of this is the same as that of the \"bucket fill\" tool in paint\n" +
-            "                programs.\n" +
-            "Q               To quit the program.";
-
-    public static final String ENTER_COMMAND = "enter command: ";
-    public static final String NOT_VALID_COMMAND = "Not a valid command";
     public static final String SCANNER_NOT_CLOSED = "Unable to close Scanner";
     public static final String INT = "Integer";
     public static final String CHAR = "Character";
@@ -46,8 +31,26 @@ public class AppConstants {
             BUCKET_FILL, Map.of(1, INT, 2, INT, 3, CHAR));
 
 
+    public static class UserInstructions {
+        public static final String USER_INSTRUCTIONS = "\nCommand \t\tDescription\n" +
+                "C w h           To create a new canvas of width w and height h.\n" +
+                "L x1 y1 x2 y2   To create a new line from (x1,y1) to (x2,y2). Currently only\n" +
+                "                horizontal or vertical lines are supported. Horizontal and vertical lines\n" +
+                "                will be drawn using the 'x' character.\n" +
+                "R x1 y1 x2 y2   To create a new rectangle, whose upper left corner is (x1,y1) and\n" +
+                "                lower right corner is (x2,y2). Horizontal and vertical lines will be drawn\n" +
+                "                using the 'x' character.\n" +
+                "B x y c         To fill the entire area connected to (x,y) with \"colour\" c. The\n" +
+                "                behavior of this is the same as that of the \"bucket fill\" tool in paint\n" +
+                "                programs.\n" +
+                "Q               To quit the program.";
+
+        public static final String ENTER_COMMAND = "enter command: ";
+    }
+
     public static class ErrorMessage {
         public static final String ERROR_MESSAGE = "\nERROR MESSAGE: ";
+        public static final String NOT_VALID_COMMAND = "Not a valid command";
         public static final String NUMBER_GREATER_THAN_ZERO_MESSAGE = "Number greater than 0 is expected";
         public static final String DRAW_CANVAS_MESSAGE = "Please draw Canvas first";
         public static final String CANVAS_VALIDATION_FAILED_MESSAGE = "Invalid Input. Canvas cannot be drawn. Dimensions should be greater than 0.";

@@ -6,6 +6,7 @@ import com.cs.print.DisplayDrawing;
 import java.util.*;
 
 import static com.cs.constants.AppConstants.*;
+import static com.cs.constants.AppConstants.UserInstructions.*;
 
 public class CommandConsoleService {
 
@@ -20,7 +21,7 @@ public class CommandConsoleService {
     private char[][] drawing;
 
     public char[][] processCommand(String command, Scanner scanner) {
-        drawing = drawingCommandParser.processCommand(command, drawing, scanner);
+        drawing = drawingCommandParser.parseCommand(command, drawing, scanner);
         return drawing;
     }
 

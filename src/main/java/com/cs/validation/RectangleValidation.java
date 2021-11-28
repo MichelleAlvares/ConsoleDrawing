@@ -6,6 +6,7 @@ import com.cs.print.DisplayMessage;
 
 import static com.cs.constants.AppConstants.*;
 import static com.cs.constants.AppConstants.ErrorMessage.*;
+import static com.cs.constants.AppConstants.UserInstructions.*;
 
 public class RectangleValidation implements Validation, DisplayMessage {
 

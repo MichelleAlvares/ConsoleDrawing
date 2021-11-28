@@ -3,7 +3,7 @@ package com.cs.validation;
 import com.cs.print.DisplayMessage;
 
 import static com.cs.constants.AppConstants.ErrorMessage.*;
-import static com.cs.constants.AppConstants.USER_INSTRUCTIONS;
+import static com.cs.constants.AppConstants.UserInstructions.USER_INSTRUCTIONS;
 
 public class BorderValidation implements DisplayMessage {
 

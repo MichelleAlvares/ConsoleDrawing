@@ -26,7 +26,6 @@ public class ParseCanvasInput {
             Canvas c = (Canvas) canvasUtil.getShape(userInputArray, shape2D);
              drawing = new char[c.getHeight() + 2][c.getWidth() + 2];
             drawCanvas.draw(c, drawing);
-            
         } 
         return res;
     }

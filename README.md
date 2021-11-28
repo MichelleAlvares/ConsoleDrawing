@@ -23,17 +23,19 @@ In a nutshell, the program should work as follows:
 
 
 **How to run the program:**
+Use JRE Version 11 to execute the jar file
 java -jar drawing-console-program.jar
 
 **Assumptions:**
-1. Line, Rectangle and Fill can happen only after canvas is drawn.
-2. Only positive numbers will be accepted.
-3. All points will start from left to right eg line first point x1 y1 is the left most one or in case of a rectangle it is the top left one.
-4. Only horizontal or vertical line can be drawn.
+ 1. Canvas starts from (0,0)
+ 2. Line, Rectangle and Fill can happen only after canvas is drawn.
+ 3. Only positive numbers will be accepted.
+ 4. All points will start from left to right eg line first point x1 y1 is the left most one or in case of a rectangle it is the top left one.
+ 5. Only horizontal or vertical line can be drawn.
 
 
 **Improvements to the application**
-Extending the application to draw 3D shapes.
-Allowing Oblique Lines hence giving users the capability to draw shapes with Oblique sides.
+ 1. Extending the application to draw 3D shapes.
+ 2. Allowing Oblique Lines hence giving users the capability to draw shapes with Oblique sides.
 
 

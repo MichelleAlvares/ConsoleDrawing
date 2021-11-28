@@ -34,7 +34,7 @@ java -jar drawing-console-program.jar
  5. Only horizontal or vertical line can be drawn.
 
 
-**Improvements to the application**
+**Improvements to the application:**
  1. Extending the application to draw 3D shapes.
  2. Allowing Oblique Lines hence giving users the capability to draw shapes with Oblique sides.
 

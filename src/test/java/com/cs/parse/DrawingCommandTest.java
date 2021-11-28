@@ -57,9 +57,19 @@ class DrawingCommandTest {
     }
 
     @Test
-    void processScannerQuitTest() {
+    void processScannerQuitCapitalQTest() {
         scanner = new Scanner("Q");
         drawingCommandParser.parseCommand("Q", new char[][]{}, scanner);
+        Mockito.verify(parseCanvasInput, Mockito.never()).parseCanvas(Mockito.any(), Mockito.any(), Mockito.any());
+        Mockito.verify(parseLineInput, Mockito.never()).parseLineInput(Mockito.any(), Mockito.any(), Mockito.any());
+        Mockito.verify(parseRectangleInput, Mockito.never()).parseRectangleInput(Mockito.any(), Mockito.any(), Mockito.any());
+        Mockito.verify(parseBucketFillInput, Mockito.never()).parseBucketFillInput(Mockito.any(), Mockito.any(), Mockito.any());
+    }
+
+    @Test
+    void processScannerQuitSmallQTest() {
+        scanner = new Scanner("q");
+        drawingCommandParser.parseCommand("q", new char[][]{}, scanner);
         Mockito.verify(parseCanvasInput, Mockito.never()).parseCanvas(Mockito.any(), Mockito.any(), Mockito.any());
         Mockito.verify(parseLineInput, Mockito.never()).parseLineInput(Mockito.any(), Mockito.any(), Mockito.any());
         Mockito.verify(parseRectangleInput, Mockito.never()).parseRectangleInput(Mockito.any(), Mockito.any(), Mockito.any());

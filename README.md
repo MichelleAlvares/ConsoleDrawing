@@ -1,7 +1,7 @@
-**Problem Statement**
+**Problem Statement**__
 *** The Problem ***
 
-__Description__
+__Description:__
 
 You're given the task of writing a simple console version of a drawing program. 
 At this time, the functionality of the program is quite limited but this might change in the future. 
